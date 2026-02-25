@@ -9,7 +9,7 @@ import { TablaUsuario } from './component/dashboard/table/tabla-usuario/tabla-us
 export const routes: Routes = [
     {path: 'Home', component: Home},
     {path: 'reserva',component: Reservas},
-    {path: 'producto-table', component: TablaProducto},
+    {path: 'tabla-producto', component: TablaProducto},
     {path:'tabla-usuario', component: TablaUsuario},
     {path: 'form-producto/:id', component: FormularioProducto},
     {path: '**', pathMatch: 'full', redirectTo: 'Home'}  

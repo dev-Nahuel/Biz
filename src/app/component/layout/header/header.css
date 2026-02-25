@@ -1,24 +1,155 @@
 
-.caja-padre {
-  display: flex;
-  align-items: center;
- /*  position: relative; */
-}
-
 /* BOTON SIDEBAR */
 .caja1 {
-  position: fixed;   /* 👈 antes absolute */
-  left: 10px;        /* pegado al borde real */
-  top: 12px;         /* alineado verticalmente */
-/*   z-index: 1055;     arriba del navbar */
+  position: fixed; /*     👈 antes absolute */
+  left: 10px;      /* pegado al borde real */
+  top: 12px;       /*    alineado verticalmente */
+/*z-index: 1055;   arriba del navbar  */
 }
 
-/* NAVBAR */
-.caja2 {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+/* =========================
+   SIDEBAR GENERAL
+========================= */
+.offcanvas {
+  width: 270px !important;
+  background: linear-gradient(180deg, #1f1f2e, #151521);
+  color: #fff;
+  border-right: none;
 }
-#btnSidebar {
-  transition: opacity .3s;
+
+/* Scroll suave */
+.offcanvas-body {
+  overflow-y: auto;
+}
+
+/* =========================
+   HEADER SIDEBAR
+========================= */
+.padre-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 15px;
+}
+
+.offcanvas-title {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   MENU ITEMS
+========================= */
+
+.padre-body {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hijos {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* iconos */
+.hijos svg {
+  min-width: 22px;
+  transition: transform 0.25s ease;
+  opacity: 0.9;
+}
+
+/* links */
+.hijos a {
+  text-decoration: none;
+  color: #e4e4e4;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  width: 100%;
+}
+
+/* HOVER EFFECT (clave estética) */
+.hijos:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(6px);
+}
+
+.hijos:hover svg {
+  transform: scale(1.15);
+  color: #ff4d4d;
+}
+
+.hijos:hover a {
+  color: #ffffff;
+}
+
+/* =========================
+   SEPARADOR VISUAL
+========================= */
+.padre-body::after {
+  content: '';
+  margin-top: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* =========================
+   FOOTER SIDEBAR (USUARIO)
+========================= */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* avatar */
+.footer img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #2d2d44;
+  object-fit: cover;
+}
+
+/* nombre usuario */
+.footer p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  flex-grow: 1;
+}
+
+/* icono settings */
+.footer svg {
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.footer svg:hover {
+  transform: rotate(90deg) scale(1.1);
+  color: #ff4d4d;
+}
+
+/* =========================
+   BOTON CLOSE
+========================= */
+.btn-close {
+  filter: invert(1);
+}
+.active-link {
+  color: #ff4d4d !important;
+  font-weight: 600;
 }
