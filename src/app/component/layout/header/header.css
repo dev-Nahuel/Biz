@@ -1,0 +1,24 @@
+
+.caja-padre {
+  display: flex;
+  align-items: center;
+ /*  position: relative; */
+}
+
+/* BOTON SIDEBAR */
+.caja1 {
+  position: fixed;   /* 👈 antes absolute */
+  left: 10px;        /* pegado al borde real */
+  top: 12px;         /* alineado verticalmente */
+/*   z-index: 1055;     arriba del navbar */
+}
+
+/* NAVBAR */
+.caja2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#btnSidebar {
+  transition: opacity .3s;
+}
