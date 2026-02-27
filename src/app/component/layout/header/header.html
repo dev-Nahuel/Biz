@@ -22,7 +22,7 @@
       </svg>
     </button>
   </div>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary caja2">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary caja2 navbar-custom">
     <div class="container-fluid">
       <a class="navbar-brand" href="#" [routerLink]="['Home']">El_Negro</a>
       <button
@@ -39,13 +39,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
               Pedidos
             </a>
             <ul class="dropdown-menu">
@@ -58,10 +52,13 @@
               <li><a class="dropdown-item" href="#">Canseladas</a></li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Pagos</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+              Pagos
+            </a>
           </li>
         </ul>
+        
         <form class="d-flex" role="search">
           <input
             class="form-control me-2"
@@ -72,6 +69,7 @@
           <button class="btn btn-outline-danger" type="submit">Buscar</button>
         </form>
       </div>
+      
     </div>
   </nav>
 </div>
@@ -122,7 +120,11 @@
         />
       </svg>
       <!-- <a data-bs-dismiss="offcanvas"> Productos </a> -->
-      <a [routerLink]="['tabla-producto']"  routerLinkActive="active-link" data-bs-dismiss="offcanvas">
+      <a
+        [routerLink]="['tabla-producto']"
+        routerLinkActive="active-link"
+        data-bs-dismiss="offcanvas"
+      >
         Productos
       </a>
     </div>
