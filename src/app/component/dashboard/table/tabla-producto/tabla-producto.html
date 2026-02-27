@@ -27,7 +27,7 @@
         <td>{{ p.imagen }}</td>
         <td>
           <button type="button" class="btn btn-primary" (click)="editarProducto(p._idProducto)">Editar</button>
-          <button type="button" class="btn btn-danger">Eliminar</button>
+          <button type="button" class="btn btn-danger" (click)="eliminarProducto(p._idProducto)">Eliminar</button>
         </td>
       </tr>
     </tbody>

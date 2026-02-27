@@ -72,6 +72,9 @@
       <label class="form-check-label" for="exampleCheck1">Activo?</label>
     </div>
   </form>
-  <button type="submit" class="btn btn-primary" (click)="agregarProducto()">Agregar</button>
+  <button *ngIf="accion=='new'" type="submit" class="btn btn-primary" (click)="agregarProducto()">Agregar</button>
+  <button  *ngIf="accion=='update'" type="submit" class="btn btn-primary" (click)="actualizarProducto()" >Actulizar</button>
+  
   <button type="submit" class="btn btn-danger"  (click)="Volver()">Volver</button>
+
 </div>

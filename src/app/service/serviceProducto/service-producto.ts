@@ -59,22 +59,31 @@ export class ServiceProducto {
         imagen: '',
         fechaVencimiento: new Date('2024-12-31'),
       },
-    ]}
-    getProductos() {
-      return this.productos;
-    }
-    getProductoById(id: number) {
-      let idE = this.productos.find((producto) => producto._idProducto === id);
-        return idE;
-    }
-    addProducto(pruducto: Producto) {
-      this.productos.push(pruducto);
-    }
-    deleteProducto(id: number) {
-      
-    }
-    
-    updateProducto(producto: Producto) {
-      
-    }
+    ];
+  }
+  getProductos() {
+    return this.productos;
+  }
+  getProductoById(id: number) {
+    let idE = this.productos.find((producto) => producto._idProducto === id);
+    return idE;
+  }
+  addProducto(pruducto: Producto) {
+    pruducto._idProducto = this.productos.length + 1;
+    this.productos.push(pruducto);
+  }
+  deleteProducto(id: number) {
+   this.productos = this.productos.filter((producto) => producto._idProducto !== id);
+  }
+
+  updateProducto(producto: Producto) {
+    let i = 0;
+    this.productos.forEach((p) => {
+      if (p._idProducto === producto._idProducto) {
+        this.productos[i] = producto;
+      } else {
+        i++;
+      }
+    });
+  }
 }

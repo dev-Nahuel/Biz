@@ -3,15 +3,17 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ServiceProducto } from '../../../../service/serviceProducto/service-producto';
 import { FormsModule } from '@angular/forms';
 import { Producto } from '../../../../models/producto/producto';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-formulario-producto',
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './formulario-producto.html',
   styleUrl: './formulario-producto.css',
 })
 export class FormularioProducto {
-  accion: string = 'new';
+  accion!: string;
   producto!: Producto;
 
 
@@ -25,11 +27,12 @@ export class FormularioProducto {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
+      const id = Number(params['id']); //esto se pone si el id es de tipo number sino se lo quita 
       if (params['id'] == '0') {
         this.accion = 'new';
       } else {
         this.accion = 'update';
-        this.cargarProducto(params['id']);
+        this.cargarProducto(id);//this.cargarProducto(['id']); <- esto se pone si el id es de tipo string (se lo remplaza1)
       }
     });
   }
@@ -43,5 +46,10 @@ export class FormularioProducto {
   }
   cargarProducto(id:number){
     this.producto = this.serviceProducto.getProductoById(id)!;
+    console.log(this.producto);
+  }
+  actualizarProducto(){
+      this.serviceProducto.updateProducto(this.producto);
+      this.router.navigate(['tabla-producto']);
   }
 }
