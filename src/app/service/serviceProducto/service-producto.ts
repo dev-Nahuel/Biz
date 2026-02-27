@@ -64,10 +64,11 @@ export class ServiceProducto {
       return this.productos;
     }
     getProductoById(id: number) {
-      
+      let idE = this.productos.find((producto) => producto._idProducto === id);
+        return idE;
     }
-    addProducto(producto: Producto) {
-      this.productos.push(producto);
+    addProducto(pruducto: Producto) {
+      this.productos.push(pruducto);
     }
     deleteProducto(id: number) {
       
