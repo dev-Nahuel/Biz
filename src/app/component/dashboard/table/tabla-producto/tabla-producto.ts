@@ -30,5 +30,11 @@ export class TablaProducto {
   editarProducto(id: number) {
     this.router.navigate(['form-producto', id]);
   }
+  eliminarProducto(id: number){
+      this.serviceProducto.deleteProducto(id);
+      this.listadoProductos();
+  }
+
+
 
 }
