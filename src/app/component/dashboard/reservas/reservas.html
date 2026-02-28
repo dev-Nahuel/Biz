@@ -19,6 +19,7 @@
       />
     </svg>
   </button>
+
   <div class="cards-container">
     <div class="product-card" *ngFor="let p of Productos">
       <div class="card-img-wrapper">
@@ -45,28 +46,66 @@
   </div>
 
   <!-- Modal -->
-  <div
-    class="modal fade"
-    id="exampleModal"
-    tabindex="-1"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
+  <div class="modal fade" id="exampleModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content carrito-modal">
+        <!-- HEADER -->
+        <div class="modal-header carrito-header">
+          <div class="carrito-title">
+            <div class="carrito-icono">🛒</div>
+            <h5>Mi Carrito</h5>
+          </div>
+
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
-        <div class="modal-body">...</div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+
+        <!-- BODY -->
+        <div class="modal-body">
+          <!-- ITEM DEMO -->
+          <div class="carrito-item">
+            <img src="https://via.placeholder.com/70" />
+
+            <div class="item-info">
+              <h6>Producto ejemplo</h6>
+              <span>Cantidad: 2</span>
+            </div>
+
+            <div class="item-precio">$ 12.000</div>
+          </div>
+
+          <div class="carrito-item">
+            <img src="https://via.placeholder.com/70" />
+
+            <div class="item-info">
+              <h6>Otro producto</h6>
+              <span>Cantidad: 1</span>
+            </div>
+
+            <div class="item-precio">$ 5.500</div>
+          </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="modal-footer carrito-footer">
+          <div class="resumen-compra">
+            <div class="resumen-linea">
+              <span>Productos:</span>
+              <strong>3</strong>
+            </div>
+
+            <div class="resumen-linea total">
+              <span>Subtotal:</span>
+              <strong>$ 17.500</strong>
+            </div>
+          </div>
+
+          <div class="acciones">
+            <button class="btn btn-outline-secondary" data-bs-dismiss="modal">
+              Seguir comprando
+            </button>
+
+            <button class="btn-finalizar">Finalizar compra</button>
+          </div>
         </div>
       </div>
     </div>
