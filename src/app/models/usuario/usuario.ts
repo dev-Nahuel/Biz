@@ -5,13 +5,14 @@ export class Usuario {
   nombre!: string;
   apellido!: string;
   correo!: string;
+  usuario!: string;
   contrasenia!: string;
   edad!: number;
   horarioIngreso!: string;
   horarioSalida!: string;
   fechaDeContrato!: Date;
   fechaDeFinDeContrato!: Date;
-  rol!: Rol;
+   rol!: Rol; 
   telefono!: string;
   img!: any;
   constructor() {}

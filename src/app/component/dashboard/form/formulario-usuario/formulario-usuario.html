@@ -1,1 +1,75 @@
-<p>formulario-usuario works!</p>
+<div class="container form-wrapper">
+  <div class="form-header">
+    <h2 *ngIf="accion == 'new'">➕ Crear Usuario</h2>
+    <h2 *ngIf="accion == 'update'">✏️ Editar Usuario</h2>
+  </div>
+
+  <form class="user-form">
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" class="form-control" name="nombre" [(ngModel)]="usuario.nombre" />
+      </div>
+
+      <div class="form-group">
+        <label>Apellido</label>
+        <input type="text" class="form-control" name="apellido" [(ngModel)]="usuario.apellido" />
+      </div>
+
+      <div class="form-group">
+        <label>Usuario</label>
+        <input type="text" class="form-control" name="usuario" [(ngModel)]="usuario.usuario" />
+      </div>
+
+      <div class="form-group">
+        <label>Contraseña</label>
+        <input
+          type="password"
+          class="form-control"
+          name="contrasenia"
+          [(ngModel)]="usuario.contrasenia"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Horario Ingreso</label>
+        <input
+          type="time"
+          class="form-control"
+          name="horarioIngreso"
+          [(ngModel)]="usuario.horarioIngreso"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>Horario Salida</label>
+        <input
+          type="time"
+          class="form-control"
+          name="horarioSalida"
+          [(ngModel)]="usuario.horarioSalida"
+        />
+      </div>
+      <div class="form-group">
+        <label>Rol</label>
+
+        <select class="form-select" name="rol" [(ngModel)]="usuario.rol">
+          <option [ngValue]="undefined">Seleccione un Rol</option>
+          <option *ngFor="let r of rols" [ngValue]="r">
+            {{ r.nombre }}
+          </option>
+        </select>
+      </div>
+    </div>
+  </form>
+  <!-- BOTONES -->
+  <div class="form-actions">
+    <button class="btn btn-primary" (click)="agregarUsuario()">Guardar Usuario</button>
+
+    <button *ngIf="accion == 'update'" class="btn btn-primary" (click)="actualizarUsuario()">
+      Actualizar Usuario
+    </button>
+
+    <button class="btn btn-danger" (click)="Volver()">Volver</button>
+  </div>
+</div>
